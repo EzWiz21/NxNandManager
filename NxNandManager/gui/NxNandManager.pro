@@ -122,11 +122,9 @@ HEADERS += \
     debug.h
 
 CONFIG(STATIC) {
-    SOURCES += $$files(../lib/ZipLib/extlibs/zlib/*.c, false)
     HEADERS += $$files(../lib/ZipLib/extlibs/zlib/*.h)
 }
 CONFIG(DYNAMIC) {
-    SOURCES += $$files(../lib/ZipLib/extlibs/zlib/*.c, false)
     HEADERS += $$files(../lib/ZipLib/extlibs/zlib/*.h)
 }
 
@@ -166,7 +164,7 @@ CONFIG(ARCH32) {
 CONFIG(ARCH64) {
     DEFINES += ARCH64
     #OPENSSL PATH
-    OPENSSL_LIB_PATH = $$PWD/../../../OpenSSL_mingw64
+    OPENSSL_LIB_PATH = /mingw64
     LIBS += -L$$PWD/../virtual_fs/dokan/x64/lib/ -ldokan1
 }
 
